@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Elevart Ubatuba | Especialistas, exames e medicina preventiva</title>
+  <meta name="description" content="Elevart Ubatuba: especialistas para toda a família, laboratório e ultrassom no mesmo lugar, medicina preventiva, emagrecimento com acompanhamento médico e equilíbrio hormonal. Pça. 13 de Maio, 70, Ubatuba, SP.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Elevart Ubatuba | Eleve a sua saúde, eleve a sua vida">
+  <meta property="og:description" content="Especialistas, exames e acompanhamento no mesmo lugar, em Ubatuba.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="./favicon-elevart.png">
+  <link rel="shortcut icon" href="./favicon-elevart.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Contralto';
+      src: url('./Contralto-Big-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Contralto';
+      src: url('./Contralto-Big-Black.otf') format('opentype');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+  </style>
+
+  <style>
+    /* ===========================
+       RESET & VARIABLES
+    =========================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold:    #DEB04A;
+      --gold-dk: #c49a35;
+      --dark:    #261A0F;
+      --dark2:   #1e1208;
+      --white:   #ffffff;
+      --off:     #FFF8DC;
+      --gray:    #8a7a60;
+      --gray-lt: #e8dfc8;
+      --areia:   #faf8f3;
+      --linha:   #e8dfc8;
+      --raio:    18px;
+      --sombra:  0 10px 30px rgba(38,26,15,.10);
+      --ease:    cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      background: var(--areia);
+      overflow-x: hidden;
+      line-height: 1.6;
+      font-size: 17px;
+    }
+    img  { max-width: 100%; display: block; }
+    a    { text-decoration: none; color: inherit; }
+    ul   { list-style: none; }
+
+    h1, h2, h3 {
+      font-family: 'Contralto', 'Poppins', sans-serif;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--dark);
+    }
+    h1 { font-size: clamp(2.2rem, 5.5vw, 3.8rem); }
+    h2 { font-size: clamp(1.8rem, 3.8vw, 2.6rem); margin-bottom: .6em; }
+    h3 { font-size: 1.25rem; margin-bottom: .35em; }
+
+    .container { width: min(1140px, 100% - 32px); margin-inline: auto; }
+    section { padding: 88px 0; }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .lead {
+      font-size: 1.15rem;
+      color: var(--gray);
+      max-width: 660px;
+    }
+    .center { text-align: center; }
+    .center .lead { margin-inline: auto; }
+    .bg-branco { background: #fff; }
+
+    /* ===========================
+       BUTTONS
+    =========================== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 28px; border-radius: 999px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      transition: transform .15s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--dark); color: #fff; }
+    .btn-primary:hover { background: var(--dark2); }
+    .btn-ghost { border: 1.5px solid var(--dark); color: var(--dark); }
+    .btn-ghost:hover { background: rgba(38,26,15,.05); }
+    .btn-gold { background: var(--gold); color: var(--dark); }
+    .btn-gold:hover { background: var(--gold-dk); }
+    .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* ===========================
+       WHATSAPP FLOAT
+    =========================== */
+    .wpp-float {
+      position: fixed; bottom: 36px; right: 36px; z-index: 9999;
+      width: 90px; height: 90px; border-radius: 50%;
+      background: transparent;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.2s;
+    }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,.45); color: #fff;
+      padding: 14px 32px; border-radius: 4px;
+      font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      background: rgba(255,255,255,.08); backdrop-filter: blur(12px);
+      transition: border-color .3s, background .3s, transform .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(222,176,74,.15); transform: translateY(-2px); }
+    .wpp-float:hover { transform: scale(1.2); }
+    .wpp-float img { width: 80px; height: 80px; object-fit: contain; border-radius: 0; }
+
+    /* ===========================
+       NAV
+    =========================== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 72px;
+      background: rgba(38,26,15,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.25);
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { height: 48px; }
+    .nav-logo small {
+      font-family: 'Poppins', sans-serif;
+      font-size: .68rem;
+      letter-spacing: .18em;
+      color: var(--gold);
+      font-weight: 700;
+      display: block;
+      margin-top: 2px;
+    }
+    .nav-menu {
+      display: flex; gap: 26px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500; font-size: .92rem;
+      color: rgba(255,255,255,.85);
+    }
+    .nav-menu a:hover { color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-cta {
+      background: var(--gold); color: var(--dark) !important;
+      padding: 10px 24px; border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-size: .8rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      transition: background .2s, transform .2s;
+    }
+    .nav-cta:hover { background: var(--gold-dk); transform: translateY(-1px); }
+    @media(max-width: 960px) { .nav-menu { display: none; } }
+    @media(max-width: 480px) {
+      .nav-cta span { display: none; }
+      .nav-cta { padding: 10px 14px; }
+    }
+
+    /* ===========================
+       HERO
+    =========================== */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: flex-end; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-video {
+      position: absolute; inset: 0;
+    }
+    .hero-video video {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .hero-video::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.2) 65%, rgba(0,0,0,0.45) 100%);
+    }
+    .hero-blur {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 50%);
+      mask-image: linear-gradient(to top, black 0%, transparent 55%);
+      -webkit-mask-image: linear-gradient(to top, black 0%, transparent 55%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center; padding: 0 5% 32px;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-block; font-size: .85rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Contralto', 'Poppins', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 400; color: #fff; line-height: 1.12;
+      text-transform: uppercase; letter-spacing: .02em;
+      margin-bottom: 16px;
+    }
+    .hero h1 em { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.1em; color: var(--gold); text-transform: none; font-weight: 400; }
+    .hero .lead { color: rgba(255,255,255,.8); font-size: 1.1rem; max-width: 600px; margin: 0 auto 34px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    /* ===========================
+       FAIXA
+    =========================== */
+    .faixa { background: var(--dark); color: #fff; padding: 24px 0; position: relative; z-index: 10; }
+    .faixa ul {
+      list-style: none;
+      display: flex; flex-wrap: nowrap; justify-content: center; align-items: center;
+      gap: 0 18px; text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600; font-size: .75rem;
+    }
+    .faixa li { display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+    @media(max-width: 900px) {
+      .faixa ul { flex-wrap: wrap; gap: 10px 16px; }
+    }
+    .faixa li::before {
+      content: '';
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+    }
+    @media(max-width: 760px) {
+      .faixa ul { grid-template-columns: repeat(2,1fr); row-gap: 16px; }
+    }
+
+    /* ===========================
+       ESPECIALIDADES
+    =========================== */
+    .espec-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 18px; margin-top: 44px;
+    }
+    .espec {
+      border: 1px solid var(--linha);
+      border-radius: 4px;
+      padding: 24px;
+      background: #fff;
+      transition: border-color .2s, transform .2s;
+    }
+    .espec:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .espec h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex; align-items: center; gap: 12px;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .espec-ico {
+      width: 36px; height: 36px; border-radius: 4px;
+      background: rgba(222,176,74,.12);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .espec-ico svg { width: 18px; height: 18px; color: var(--gold); }
+    .espec p { color: var(--gray); font-size: .93rem; line-height: 1.55; }
+    .espec-cta { margin-top: 40px; text-align: center; }
+    @media(max-width: 900px) { .espec-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width: 560px) { .espec-grid { grid-template-columns: 1fr; } }
+
+    /* ===========================
+       SOBRE
+    =========================== */
+    .sobre-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 56px; align-items: center;
+    }
+    .sobre-foto {
+      aspect-ratio: 5/4;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+    }
+    /* Carousel */
+    .carousel { position: relative; width: 100%; height: 100%; }
+    .carousel-slide {
+      position: absolute; inset: 0;
+      opacity: 0; transition: opacity 1s ease;
+    }
+    .carousel-slide.active { opacity: 1; }
+    .carousel-slide img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .carousel-dots {
+      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 7px; z-index: 2;
+    }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,.45); border: none; cursor: pointer;
+      transition: background .3s, transform .3s;
+    }
+    .carousel-dot.active { background: var(--gold); transform: scale(1.25); }
+    .citacao {
+      margin-top: 26px;
+      padding: 22px 26px;
+      border-left: 3px solid var(--gold);
+      background: rgba(222,176,74,.1);
+      border-radius: 0 14px 14px 0;
+      font-family: 'Contralto', 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      color: var(--dark);
+    }
+    @media(max-width: 900px) { .sobre-grid { grid-template-columns: 1fr; } }
+
+    /* ===========================
+       COMO FUNCIONA
+    =========================== */
+    .passos {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 22px; margin-top: 44px;
+      counter-reset: passo; text-align: left;
+    }
+    .passo {
+      background: #fff;
+      border-radius: var(--raio);
+      padding: 32px 26px;
+      border: 1px solid rgba(222,176,74,.2);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .passo:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(38,26,15,.08); }
+    .passo::before {
+      counter-increment: passo;
+      content: "0" counter(passo);
+      display: flex; align-items: center; justify-content: center;
+      width: 50px; height: 50px; border-radius: 50%;
+      background: var(--gold);
+      color: var(--dark);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      margin-bottom: 18px;
+    }
+    .passo h3 { color: var(--dark); margin-bottom: 8px; }
+    .passo p { color: var(--gray); font-size: .95rem; line-height: 1.6; }
+    @media(max-width: 900px) { .passos { grid-template-columns: 1fr 1fr; } }
+    @media(max-width: 560px) { .passos { grid-template-columns: 1fr; } }
+
+    /* ===========================
+       PROGRAMAS
+    =========================== */
+    .programas {
+      display: grid; grid-template-columns: repeat(2,1fr);
+      gap: 22px; margin-top: 44px;
+    }
+    .programa {
+      border-radius: 24px; padding: 40px 36px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .programa:nth-child(1), .programa:nth-child(4) {
+      background: var(--dark); color: rgba(255,248,220,.85);
+    }
+    .programa:nth-child(1) h3, .programa:nth-child(4) h3 { color: #fff; }
+    .programa:nth-child(2), .programa:nth-child(3) { background: rgba(222,176,74,.1); }
+    .programa h3 { font-size: 1.6rem; }
+    .programa .rotulo {
+      font-family: 'Poppins', sans-serif;
+      font-size: .75rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 8px; }
+    .tag {
+      padding: 7px 14px; border-radius: 999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: .85rem; font-weight: 600;
+      background: #fff; color: var(--dark);
+    }
+    .programa:nth-child(1) .tag, .programa:nth-child(4) .tag {
+      background: rgba(255,255,255,.12); color: #fff;
+    }
+    .programa .btn { align-self: flex-start; margin-top: auto; padding: 12px 22px; font-size: .94rem; }
+    .programa:nth-child(1) .btn, .programa:nth-child(4) .btn {
+      background: var(--gold); color: var(--dark);
+    }
+    .programa:nth-child(1) .btn:hover, .programa:nth-child(4) .btn:hover {
+      background: var(--gold-dk);
+    }
+    .programa:nth-child(2) p, .programa:nth-child(3) p { color: var(--gray); }
+    @media(max-width: 900px) {
+      .programas { grid-template-columns: 1fr; }
+      .programa { padding: 32px 24px; }
+    }
+
+    /* ===========================
+       EQUIPE
+    =========================== */
+    .equipe-grid {
+      display: grid; grid-template-columns: repeat(2,1fr);
+      gap: 32px; margin-top: 44px;
+      max-width: 760px; margin-inline: auto;
+    }
+    .medico {
+      background: #fff; border-radius: 22px;
+      overflow: hidden; box-shadow: var(--sombra);
+      display: flex; flex-direction: column;
+    }
+    .medico-foto {
+      aspect-ratio: 3/4;
+      background: #2a1e10 center top/cover no-repeat;
+    }
+    .medico-info {
+      padding: 24px 24px 28px;
+      display: flex; flex-direction: column;
+      gap: 10px; flex: 1;
+    }
+    .crm {
+      font-family: 'Poppins', sans-serif;
+      font-size: .8rem; font-weight: 700;
+      letter-spacing: .06em; color: var(--gold);
+      text-transform: uppercase;
+    }
+    .medico-info p { color: var(--gray); font-size: .96rem; }
+    .medico-info .btn { margin-top: auto; align-self: flex-start; padding: 11px 20px; font-size: .92rem; }
+    .medico-mais { background: var(--dark); color: rgba(255,248,220,.8); }
+    .medico-mais .medico-info { justify-content: center; }
+    .medico-mais h3 { color: #fff; font-size: 1.5rem; }
+    .medico-mais p { color: rgba(255,248,220,.7); }
+    @media(max-width: 900px) { .equipe-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width: 600px) { .equipe-grid { grid-template-columns: 1fr; } }
+
+    /* ===========================
+       DIFERENCIAIS
+    =========================== */
+    .dif-grid {
+      display: grid; grid-template-columns: repeat(5,1fr);
+      gap: 20px; margin-top: 48px;
+    }
+    .dif {
+      text-align: center; padding: 32px 18px;
+      background: #fff; border-radius: 16px;
+      border: 1px solid rgba(222,176,74,.2);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .dif:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(38,26,15,.08); }
+    .dif-icon {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(222,176,74,.12);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .dif svg { width: 28px; height: 28px; color: var(--gold); }
+    .dif h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; font-size: .95rem;
+      color: var(--dark); line-height: 1.4;
+    }
+    @media(max-width: 900px) { .dif-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width: 560px) { .dif-grid { grid-template-columns: 1fr; } }
+
+    /* ===========================
+       FAQ
+    =========================== */
+    .faq { max-width: 780px; margin: 40px auto 0; }
+    details {
+      background: #fff;
+      border: 1px solid var(--linha);
+      border-radius: 14px;
+      padding: 4px 24px;
+      margin-bottom: 12px;
+    }
+    summary {
+      cursor: pointer; list-style: none;
+      padding: 18px 0;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; color: var(--dark);
+      display: flex; justify-content: space-between; gap: 16px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--gold); }
+    details[open] summary::after { content: "–"; }
+    details p { padding: 0 0 20px; color: var(--gray); }
+
+    /* ===========================
+       LOCAL
+    =========================== */
+    .local-grid {
+      display: grid; grid-template-columns: .9fr 1.1fr;
+      gap: 40px; align-items: stretch;
+    }
+    .local-info {
+      background: var(--off);
+      border-radius: 22px; padding: 40px;
+      border: 1px solid var(--linha);
+    }
+    .local-info dl { display: grid; gap: 22px; margin: 24px 0 30px; }
+    .local-info dt {
+      font-family: 'Poppins', sans-serif;
+      font-size: .8rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .local-info dd { font-size: 1.05rem; color: var(--dark); }
+    .mapa { border-radius: 22px; overflow: hidden; min-height: 380px; box-shadow: var(--sombra); }
+    .mapa iframe { width: 100%; height: 100%; min-height: 380px; border: 0; }
+    @media(max-width: 900px) {
+      .local-grid { grid-template-columns: 1fr; }
+      .local-info { padding: 30px 24px; }
+    }
+
+    /* ===========================
+       CTA FINAL
+    =========================== */
+    .cta-final { background: var(--dark); color: rgba(255,248,220,.85); text-align: center; }
+    .cta-final h2 { color: #fff; max-width: 760px; margin-inline: auto; }
+    .cta-final .lead { color: rgba(255,248,220,.7); margin: 0 auto 34px; }
+    .cta-final .eyebrow { color: var(--gold); }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer {
+      background: var(--dark2);
+      color: rgba(255,248,220,.55);
+      padding: 44px 0 32px;
+      font-size: .9rem;
+    }
+    .foot { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+    footer strong { color: #fff; }
+    footer a:hover { color: var(--gold); }
+    .foot-legal {
+      margin-top: 28px; padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      font-size: .82rem;
+    }
+
+    /* ===========================
+       PENDENTE BADGE
+    =========================== */
+    .pendente {
+      background: #fff4d6; border: 1px dashed #d9a400;
+      color: #7a5b00; font-size: .82rem;
+      padding: 6px 10px; border-radius: 8px;
+      display: inline-block;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- WhatsApp Float -->
+<a class="wpp-float wa-link" href="#" aria-label="Agendar pelo WhatsApp">
+  <img src="./wpp-icon-custom.png" alt="WhatsApp">
+</a>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio" class="nav-logo">
+    <img src="./logo-elevart.png" alt="Elevart">
+    <small></small>
+  </a>
+  <div class="nav-menu">
+    <a href="#especialidades">Especialidades</a>
+    <a href="#sobre">A clínica</a>
+    <a href="#programas">Programas</a>
+    <a href="#local">Como chegar</a>
+    <a href="#especialidades">Exames</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta wa-link" href="#">
+      <span>Agendar</span>
+    </a>
+  </div>
+</nav>
+
+<main id="inicio">
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="hero-video">
+    <video autoplay loop muted playsinline poster="./hero-elevart-poster.jpg">
+      <source src="./hero-elevart.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-blur"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Clínica Médica · Ubatuba</span>
+    <h1>ELEVE A SUA SAÚDE,<br>ELEVE A SUA VIDA</h1>
+    <p class="lead">Consultas, exames e acompanhamento  tudo em um só lugar, com quem realmente entende.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-gold wa-link" href="#" data-msg="Olá! Vim pelo site da Elevart Ubatuba e gostaria de agendar." style="color:var(--dark);">Agendar sua consulta</a>
+      <a class="btn btn-outline" href="#especialidades">Ver especialidades</a>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA -->
+<div class="faixa">
+  <div class="container">
+    <ul>
+      <li>Emagrecimento saudável e performance</li>
+      <li>Medicina integrativa</li>
+      <li>Especialidades para toda a família</li>
+      <li>Exames de sangue e ultrassom no local</li>
+      <li>Reposição hormonal</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ====== ESPECIALIDADES ====== -->
+<section id="especialidades">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Especialidades</span>
+      <h2>Cuidado médico completo, perto de você</h2>
+      <p class="lead" style="max-width:560px;margin-inline:auto;">Especialidades, exames e laboratório de referência em um<br>único lugar, para você e toda a sua família.</p>
+    </div>
+    <div class="espec-grid">
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="13" cy="4" r="2"/><path d="M7.5 22l2-8.5 2.5 3 3-5.5"/><path d="M17 22l-2-5"/><path d="M5 12l2-3 4 1 2-4"/></svg></span>Medicina Esportiva</h3><p>Performance, prevenção de lesões, liberação para treinos e acompanhamento de atletas e praticantes de exercício.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a7 7 0 0 0-7 7c0 4 3 7 7 10 4-3 7-6 7-10a7 7 0 0 0-7-7z"/><path d="M12 2c1-2 3-2 4-1"/></svg></span>Nutrologia</h3><p>Alimentação funcional, emagrecimento médico, suplementação e saúde metabólica com base em exames.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5Z"/><path d="M5 16l.8 2.2L8 19l-2.2.8L5 22l-.8-2.2L2 19l2.2-.8Z"/><path d="M19 2l.5 1.5L21 4l-1.5.5L19 6l-.5-1.5L17 4l1.5-.5Z"/></svg></span>Procedimentos Estéticos</h3><p>Morpheus8, bioestimuladores, botox, preenchimento e protocolos de rejuvenescimento facial e corporal.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l1.5-3 2 6 1.5-3h6.28"/></svg></span>Cardiologia</h3><p>Check-up do coração, controle da pressão e liberação para atividade física.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></span>Clínico Geral</h3><p>A porta de entrada. Avalia, pede os exames certos e encaminha quando precisa.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8l2 4 2-3 2 5 2-3 2 2"/></svg></span>Exames e Ultrassom</h3><p>Laboratório e exames de imagem aqui mesmo, ligados à sua consulta. Incluindo testes genéticos e microbioma intestinal.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18.5 5.5a2.5 2.5 0 0 0-3.54 0l-9 9a2.5 2.5 0 0 0 3.54 3.54l9-9a2.5 2.5 0 0 0 0-3.54z"/><path d="M4 4c-1 1-1 3 0 4l1 1"/><path d="M20 20c1-1 1-3 0-4l-1-1"/><circle cx="5" cy="3.5" r="1.5"/><circle cx="19" cy="20.5" r="1.5"/></svg></span>Reumatologia</h3><p>Artrite, lúpus, fibromialgia e doenças autoimunes com diagnóstico preciso e acompanhamento contínuo.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="5"/><path d="M12 13v9"/><path d="M9 19h6"/><path d="M10 16h4"/></svg></span>Ginecologia</h3><p>Preventivo e acompanhamento da mulher em todas as fases, inclusive na menopausa.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2c-2 0-4 1.5-4 4v2c0 2 1 3 2 4l-2 2c-1 1-1 2-1 3h10c0-1 0-2-1-3l-2-2c1-1 2-2 2-4V6c0-2.5-2-4-4-4z"/><path d="M9 15h6"/></svg></span>Endocrinologia</h3><p>Tireoide, diabetes, hormônios e metabolismo.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18.5 5.5a2.5 2.5 0 0 0-3.54 0l-9 9a2.5 2.5 0 0 0 3.54 3.54l9-9a2.5 2.5 0 0 0 0-3.54z"/><path d="M4.5 4.5c-1 1-1 3 0 4L6 10"/><path d="M19.5 19.5c1-1 1-3 0-4L18 14"/><circle cx="5.5" cy="3.5" r="1.5"/><circle cx="18.5" cy="20.5" r="1.5"/></svg></span>Ortopedia</h3><p>Coluna e articulações, para quem trabalha, treina ou só quer andar sem dor.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 1 14 3.02c.5 2.5 2 4.9 3.5 6.42S20 13.3 20 15.95 18 20 16 20s-3.5-1.5-3.5-3.5"/></svg></span>Cirurgia Vascular</h3><p>Varizes, pernas pesadas e saúde da circulação.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10" cy="14" r="5"/><path d="M19 5l-5.4 5.4"/><path d="M19 5h-5"/><path d="M19 5v5"/></svg></span>Urologia</h3><p>Saúde do homem e prevenção da próstata.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>Oftalmologia</h3><p>Exame de vista e cuidado com os olhos para a família toda.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>Dermatologia</h3><p>Pele, cabelo e unhas, de acne e manchas ao check-up de pintas.</p></div>
+      <div class="espec"><h3><span class="espec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="6" r="3"/><path d="M9 21v-4a3 3 0 0 1 6 0v4"/><path d="M6 10h12"/><path d="M8 10v4"/><path d="M16 10v4"/></svg></span>Pediatria</h3><p>Acompanhamento do crescimento e da saúde das crianças, com cuidado e atenção.</p></div>
+    </div>
+    <div class="espec-cta">
+      <a class="btn btn-gold wa-link" href="#" data-msg="Olá! Vim pelo site da Elevart Ubatuba e gostaria de agendar." style="color:var(--dark);">Agendar uma consulta</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SOBRE ====== -->
+<section id="sobre" class="bg-branco">
+  <div class="container sobre-grid">
+    <div class="sobre-foto">
+      <div class="carousel" id="sobreCarousel">
+        <div class="carousel-slide active"><img src="./uba-foto7.jpg" alt="Fachada Elevart Ubatuba"></div>
+        <div class="carousel-slide"><img src="./uba-foto2.jpg" alt="Sala de espera Elevart Ubatuba"></div>
+        <div class="carousel-slide"><img src="./uba-foto6.jpg" alt="Recepção Elevart Ubatuba"></div>
+        <div class="carousel-slide"><img src="./uba-foto1.jpg" alt="Painel Bem-Vindo Elevart Ubatuba"></div>
+        <div class="carousel-slide"><img src="./uba-foto4.jpg" alt="Consultório Elevart Ubatuba"></div>
+        <div class="carousel-slide"><img src="./uba-foto5.jpg" alt="Sala de atendimento Elevart Ubatuba"></div>
+        <div class="carousel-dots" id="sobreDots"></div>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow">A clínica</span>
+      <h2>A Elevart chegou a Ubatuba para ser a clínica que a cidade merecia.</h2>
+      <p class="lead">Clínica especializada em tratamento hormonal, emagrecimento, medicina integrativa e estética corporal.</p>
+      <div class="citacao">Saúde de qualidade, perto de você.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== COMO FUNCIONA ====== -->
+<section>
+  <div class="container center">
+    <span class="eyebrow">Como funciona</span>
+    <h2>Cuidado médico de verdade, do início ao fim.</h2>
+    <p class="lead">Um processo simples, pensado para você ter<br>o melhor atendimento possível.</p>
+    <div class="passos">
+      <div class="passo"><h3>Agende sua consulta</h3><p>Em minutos, sem burocracia. Nossa equipe confirma e organiza tudo para você.</p></div>
+      <div class="passo"><h3>Consulta com especialista</h3><p>Atendido por um médico de referência, com tempo e atenção para entender o seu caso.</p></div>
+      <div class="passo"><h3>Exames no mesmo local</h3><p>Laboratório e ultrassom aqui mesmo. Sem precisar sair ou ir de clínica em clínica.</p></div>
+      <div class="passo"><h3>Seu plano de cuidado</h3><p>Um tratamento pensado especialmente para você, com acompanhamento contínuo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PROGRAMAS ELEVART ====== -->
+<section id="programas" class="bg-branco">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Programas Elevart</span>
+      <h2>Além da consulta: cuidado com acompanhamento</h2>
+      <p class="lead">Programas com começo, meio e acompanhamento, para quem quer cuidar da saúde de forma contínua.</p>
+    </div>
+    <div class="programas">
+      <div class="programa">
+        <span class="rotulo">Emagrecimento</span>
+        <h3>Emagrecer com saúde e acompanhamento médico</h3>
+        <p>A partir dos exames, cuidando de hormônios, metabolismo, alimentação e rotina. Sem dieta impossível e sem promessa milagrosa.</p>
+        <div class="tags"><span class="tag">Avaliação</span><span class="tag">Plano alimentar</span><span class="tag">Acompanhamento</span></div>
+        <a class="btn wa-link" href="#" data-msg="Olá! Vim pelo site da Elevart Ubatuba e gostaria de saber sobre emagrecimento.">Agendar sua consulta</a>
+      </div>
+      <div class="programa">
+        <span class="rotulo">Equilíbrio hormonal</span>
+        <h3>Hormônios em dia, vida em dia</h3>
+        <p>Cansaço, sono ruim, queda de libido, menopausa e andropausa. Avaliação e tratamento com acompanhamento médico, para homens e mulheres.</p>
+        <div class="tags"><span class="tag">Menopausa</span><span class="tag">Andropausa</span><span class="tag">Tireoide</span></div>
+        <a class="btn btn-gold wa-link" href="#" data-msg="Olá! Vim pelo site da Elevart Ubatuba e gostaria de saber sobre equilíbrio hormonal.">Agendar sua consulta</a>
+      </div>
+      <div class="programa">
+        <span class="rotulo">Energia e disposição</span>
+        <h3>Mais disposição para o dia a dia</h3>
+        <p>Para quem quer mais energia no trabalho, no esporte e em casa: sono melhor, ganho de massa magra e saúde em dia para treinar com segurança.</p>
+        <div class="tags"><span class="tag">Disposição</span><span class="tag">Massa magra</span><span class="tag">Liberação para treino</span></div>
+        <a class="btn btn-gold wa-link" href="#" data-msg="Olá! Vim pelo site da Elevart Ubatuba e gostaria de saber sobre energia e disposição.">Agendar sua consulta</a>
+      </div>
+      <div class="programa">
+        <span class="rotulo">Prevenção e longevidade</span>
+        <h3>Check-up para cada fase da vida</h3>
+        <p>Das crianças aos avós, consultas e exames pensados para a sua idade, para encontrar e evitar problemas cedo e envelhecer com saúde e autonomia.</p>
+        <div class="tags"><span class="tag">Mulher</span><span class="tag">Homem</span><span class="tag">Criança</span><span class="tag">40+</span><span class="tag">60+</span></div>
+        <a class="btn wa-link" href="#" data-msg="Olá! Vim pelo site da Elevart Ubatuba e gostaria de saber sobre o check-up.">Quero fazer meu check-up</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== EQUIPE ====== -->
+<section id="equipe">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Equipe</span>
+      <h2>Quem cuida de você</h2>
+      <p class="lead">Conheça os médicos que lideram nossa equipe.</p>
+    </div>
+    <div class="equipe-grid">
+      <article class="medico">
+        <div class="medico-foto" style="background-image:url('./dr-ivan.jpg')"></div>
+        <div class="medico-info">
+          <span class="crm">Médico · CRM-SP 182.486</span>
+          <h3>Dr. Ivan Bottene</h3>
+          <p>Medicina do Esporte, Emagrecimento e Saúde Hormonal. Referência em Ubatuba há anos, com milhares de pacientes atendidos.</p>
+          <a class="btn btn-gold wa-link" href="#" data-msg="Olá! Vim pelo site da Elevart Ubatuba e gostaria de agendar com o Dr. Ivan.">Agendar com o Dr. Ivan</a>
+        </div>
+      </article>
+      <article class="medico">
+        <div class="medico-foto" style="background-image:url('./dra-mariely.jpg')"></div>
+        <div class="medico-info">
+          <span class="crm">Médica · CRM-SP 193.914</span>
+          <h3>Dra. Mariely Helbingen</h3>
+          <p>Nutrologia. Especialista em equilíbrio hormonal e qualidade de vida feminina.</p>
+          <a class="btn btn-gold wa-link" href="#" data-msg="Olá! Vim pelo site da Elevart Ubatuba e gostaria de agendar com a Dra. Mariely.">Agendar com a Dra. Mariely</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== DIFERENCIAIS ====== -->
+<section class="bg-branco">
+  <div class="container center">
+    <span class="eyebrow">Por que a Elevart</span>
+    <h2>Por que escolher a Elevart Ubatuba</h2>
+    <div class="dif-grid">
+      <div class="dif">
+        <div class="dif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Clínica especializada em tratamento hormonal, emagrecimento, medicina integrativa e estética corporal</h3>
+      </div>
+      <div class="dif">
+        <div class="dif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></div>
+        <h3>Mais de 12 especialidades para toda a família</h3>
+      </div>
+      <div class="dif">
+        <div class="dif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8l2 4 2-3 2 5 2-3 2 2"/></svg></div>
+        <h3>Consulta, exames de sangue, ultrassom, testes genéticos e microbioma intestinal no mesmo local</h3>
+      </div>
+      <div class="dif">
+        <div class="dif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Agendamento rápido e sem burocracia</h3>
+      </div>
+      <div class="dif">
+        <div class="dif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 9h1m5 0h1M9 13h1m5 0h1"/></svg></div>
+        <h3>Estrutura moderna no coração de Ubatuba</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section id="duvidas">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Dúvidas</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Atende convênio?</summary>
+        <p>O atendimento é particular, sem burocracia. Você sabe o valor da consulta ou do exame antes de marcar.</p>
+      </details>
+      <details>
+        <summary>Consigo fazer os exames no mesmo lugar da consulta?</summary>
+        <p>Sim. Laboratório e ultrassom ficam aqui na clínica, e o resultado chega direto para o seu médico.</p>
+      </details>
+      <details>
+        <summary>Atendem crianças?</summary>
+        <p>Sim. Temos pediatria e atendimento para todas as idades, da infância à terceira idade.</p>
+      </details>
+      <details>
+        <summary>Como funciona o acompanhamento para emagrecer?</summary>
+        <p>Começa com uma consulta e os exames certos para entender o seu corpo: hormônios, metabolismo e rotina. A partir daí, o médico monta um plano possível de seguir e acompanha a sua evolução. Sem dieta impossível e sem promessa milagrosa.</p>
+      </details>
+      <details>
+        <summary>O que é medicina preventiva?</summary>
+        <p>É cuidar antes: fazer os exames certos para a sua idade e ter um médico acompanhando você ao longo do tempo, para encontrar e evitar problemas cedo. Na Elevart, a gente olha a saúde como um todo, juntando exames, hormônios, alimentação, sono e rotina.</p>
+      </details>
+      <details>
+        <summary>Como faço para agendar?</summary>
+        <p>Fale diretamente com a nossa equipe. <a class="wa-link" href="#" data-msg="Olá! Vim pelo site da Elevart Ubatuba e gostaria de agendar uma consulta." style="color:var(--gold);font-weight:600;text-decoration:underline;text-underline-offset:3px;">Agendar sua consulta →</a></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ====== LOCAL ====== -->
+<section id="local" class="bg-branco">
+  <div class="container local-grid">
+    <div class="local-info">
+      <span class="eyebrow">Como chegar</span>
+      <h2>Elevart Ubatuba</h2>
+      <dl>
+        <div><dt>Endereço</dt><dd>Pça. 13 de Maio, 70<br>Ubatuba, SP · 11690-168</dd></div>
+
+        <div><dt>Horário de Funcionamento</dt><dd>
+          <table style="border-collapse:collapse;font-size:.95rem;width:100%">
+            <tr><td style="padding:3px 12px 3px 0;font-weight:600;">Segunda a Sexta</td><td>07:30 – 18:00</td></tr>
+            <tr><td style="padding:3px 12px 3px 0;font-weight:600;">Sábado</td><td>07:30 – 12:00</td></tr>
+            <tr><td style="padding:3px 12px 3px 0;font-weight:600;">Domingo</td><td style="color:#999;">Fechado</td></tr>
+          </table>
+          <p style="margin-top:8px;font-size:.82rem;color:var(--gold);">⚠ Os horários podem ser diferentes em feriados.</p>
+        </dd></div>
+
+      </dl>
+      <a class="btn btn-gold wa-link" href="#" data-msg="Olá! Vim pelo site da Elevart Ubatuba e gostaria de agendar uma consulta." style="color:var(--dark);">Agendar sua consulta</a>
+    </div>
+    <div class="mapa">
+      <iframe title="Mapa Elevart Ubatuba" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Pra%C3%A7a+13+de+Maio,+70,+Ubatuba,+SP&t=m&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="container">
+    <span class="eyebrow">Elevart Ubatuba</span>
+    <h2>Ubatuba tem tudo que você precisa para viver bem.</h2>
+    <p class="lead">A Elevart está aqui para cuidar da sua saúde com a seriedade que você merece.</p>
+    <a class="btn btn-gold wa-link" href="#" data-msg="Olá! Vim pelo site da Elevart Ubatuba e gostaria de agendar uma consulta." style="color:var(--dark);">Agendar sua consulta</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <img src="./logo-elevart.png" alt="Elevart" style="height:40px;margin-bottom:12px;opacity:.85;filter:brightness(0) invert(1);">
+        <br>Clínica médica, medicina preventiva e integrativa.<br>
+        Eleve a sua saúde, eleve a sua vida.
+      </div>
+      <div>Pça. 13 de Maio, 70 · Ubatuba, SP<br>CEP 11690-168</div>
+      <div>
+        <a href="https://www.instagram.com/elevartclinic/" target="_blank" rel="noopener">Instagram @elevartclinic</a><br>
+
+      </div>
+    </div>
+    <div class="foot-legal">© 2026 Elevart Health Clinic · Responsável técnica: Dra. Mariely Fernanda da Silva Helbingen · CRM-SP 193.914 · <span class="pendente">PENDENTE: CNPJ e razão social da unidade</span></div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var numero = "5512991959085";
+    var padrao = "Olá! Vim pelo site da Elevart Ubatuba e gostaria de agendar.";
+    document.querySelectorAll(".wa-link").forEach(function(a){
+      var msg = a.getAttribute("data-msg") || padrao;
+      a.href = "https://wa.me/" + numero + "?text=" + encodeURIComponent(msg);
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+  })();
+
+  // ===== CAROUSEL =====
+  (function(){
+    var carousel = document.getElementById('sobreCarousel');
+    if(!carousel) return;
+    var slides = carousel.querySelectorAll('.carousel-slide');
+    var dotsContainer = document.getElementById('sobreDots');
+    var current = 0;
+    // create dots
+    slides.forEach(function(_, i){
+      var d = document.createElement('button');
+      d.className = 'carousel-dot' + (i===0?' active':'');
+      d.setAttribute('aria-label','Foto '+(i+1));
+      d.addEventListener('click', function(){ goTo(i); });
+      dotsContainer.appendChild(d);
+    });
+    var dots = dotsContainer.querySelectorAll('.carousel-dot');
+    function goTo(n){
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+    setInterval(function(){ goTo(current+1); }, 4000);
+  })();
+</script>
+</body>
+</html>
